@@ -1,0 +1,306 @@
+@font-face {
+  font-family: 'Monesque';
+  src: url(../fonts/Monesque.ttf);
+}
+
+@font-face {
+  font-family: 'GHOST WALKER FREE';
+  src: url(../fonts/Ghostwalkerfree.otf);
+}
+
+
+body{
+  background: url(https://web.hycdn.cn/arknights/official/static/pc-bg.24aaaa1654f269624896.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  overflow: hidden;
+  cursor: url(https://web.hycdn.cn/arknights/official/static/cursor-inner.1d69419cb78ed4579ad9.png) 3 3, default;
+}
+
+.icon-1{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 150px;
+  height: 150px;
+  z-index: 100;
+}
+
+.icon-1 img{
+  width: 150px;
+  height: 150px;
+}
+
+ /* 容器 */
+ .container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 全屏滚动容器 */
+.full-page{
+  width: 100%;
+  height: 500%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.full-page-item{
+  width: 100%;
+  height: 20%;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.full-index{
+  padding-left: 5.8375rem;
+}
+
+.full-index::before{
+  content: " ";
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/skd.png);
+  /*background-image: url(https://web.hycdn.cn/arknights/official/static/amiya.4cd2471ab732f5954f66.png);*/
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  background-size: auto 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0.3;
+  visibility: visible;
+  animation-name: example;
+  animation-duration: 1500ms;
+}
+
+@keyframes example{
+  from{
+    opacity: 0;
+    visibility: hidden;
+  }
+  to{
+    opacity: 0.3;
+    visibility: visible;
+  }
+}
+
+#nav{
+  position: absolute;
+  right: 5.25rem;
+  height: 100%;
+}
+
+#nav ul{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  list-style: none;
+  width: 4rem;
+}
+
+#nav ul a{
+  padding: 2.8rem 0;
+  display: block;
+  pointer-events: none;
+}
+
+
+#nav .navMenutitle{
+  color: #fff;
+  font-size: 1rem;
+  font-family: "SansRegular";
+  transition: margin 0.3s,color 0.3s;
+  width: 100%;
+  text-align: center;
+  margin-left: 1rem;
+  font-weight: 600;
+  padding: 3px 0;
+}
+
+#nav .active span{
+  display: block;
+  position: relative;
+}
+
+#nav .active .navMenutitle{
+  color: #22BBFF;
+  margin-left: -1rem;
+}
+
+#nav .active .navMenutitle::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  border-left: 4px solid #22BBFF;
+}
+
+#nav .samll-tab:hover .navMenutitle{
+  color: #22BBFF;
+  margin-left: -1rem;
+}
+
+#c {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background:rgba(255,255,255,0);
+}
+
+#index{
+  overflow: hidden;
+}
+
+.content-logo {
+  margin-top: 20px;
+}
+.content-logo img{
+  width: 445px;
+}
+
+#index .content-title{
+  font-family: 'GHOST WALKER FREE';
+  color: #fff;
+  font-size: 121px;
+  margin-top: 70px;
+}
+
+.homePuzzle{
+  position: absolute;
+  top: 70%;
+  z-index: 3;
+}
+
+.first{
+
+}
+
+.core{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.end{
+  top: 10%;
+  right: 10%;
+}
+
+.Rotation{
+  position: relative;
+  width: 1060px;
+  height: 536px;
+  margin: 50px auto;
+}
+
+.Rotation .Rotation-box{
+  position: relative;
+  overflow: hidden;
+  width: 1060px;
+  height: 536px;
+}
+
+ul{
+  list-style: none;
+  height: 516px;
+  position: absolute;
+  top: 18px;
+  left: 0;
+}
+
+.Rotation ul li{
+  position: relative;
+  width: 220px;
+  height: 516px;
+  float: left;
+  margin-right: 10px;
+  border: 1px solid #fff;
+  transition: all .4s ease;
+}
+
+.Rotation ul li:hover{
+  transform: translateY(-18px);
+}
+
+.Rotation ul li a{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.Rotation ul li a img{
+  width: 100%;
+  height: 100%;
+}
+
+.btn-left{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -50px;
+  z-index: 2;
+  background: #fff;
+  width: 70px;
+  height: 70px;
+  visibility: hidden;
+}
+
+.btn-right{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -50px;
+  z-index: 2;
+  background: #fff;
+  width: 70px;
+  height: 70px;
+}
+
+.btn-left i{
+  background: url(https://yys.res.netease.com/pc/gw/20180913151832/img/arrow1_53d9b6f.png) no-repeat;
+}
+
+
+.btn-right i{
+  background: url(https://yys.res.netease.com/pc/gw/20180913151832/img/arrow4_bdb96a0.png) no-repeat;
+}
+
+.btn-right i,.btn-left i{
+  width: 47px;
+  height: 9px;
+  margin: 32px auto 0;
+  display: block;
+}
+
+.btn-left:hover i,
+.btn-right:hover i{
+  animation: shakeR 1s ease;
+}
+
+@keyframes shakeR{
+  0%, 100%, 20%, 50%, 80%{
+    transition-timing-function: cubic-bezier(0.215,.61,.355,1);
+    transform: translate3d(0,0,0);
+  }
+  40%, 43%{
+    transition-timing-function: cubic-bezier(0.755,.5,.855,1);
+    transform: translate3d(-10px,0,0);
+  }
+  70%{
+    transition-timing-function: cubic-bezier(0.755,.5,.855,1);
+    transform: translate3d(-5px,0,0);
+  }
+  90% {
+    transform: translate3d(-4px,0,0);
+  }
+}
+
+
+
+
+

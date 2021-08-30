@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/shlr.css">
+  <title>深海猎人</title>
+</head>
+<body>
+  <div class="icon-1" id="icon1">
+    <img src="img/icon1.png" alt="">
+  </div>
+  <canvas id="c" width="1200" height="300"></canvas>
+  <div class="container">
+    <div class="full-page">
+      <div class="full-page-item full-index" id="index">
+        <div class="content">
+          <div class="content-logo">
+            <img src="img/logo.png" alt="">
+          </div>
+          <div class="content-title">Deepsea Hunter</div>
+          <div>
+            <canvas class="homePuzzle first"></canvas>
+            <canvas class="homePuzzle core"></canvas>
+            <canvas class="homePuzzle end"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="full-page-item">
+        <div class="Rotation">
+          <div class="Rotation-box">
+            <ul style="width: 2300px;">
+              <li>
+                <a href="#">
+                  <img src="img/2/tag1.png" alt="起源">
+                </a>
+
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/2/tag6.png" alt="楔子">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/2/tag3.png" alt="序章">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/2/tag4.png" alt="黑夜">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/2/tag5.png" alt="黎明">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <a class="btn-left" id="left">
+            <i></i>
+          </a>
+          <a class="btn-right" id="right">
+            <i></i>
+          </a>
+        </div>
+        <div></div>
+      </div>
+      <div class="full-page-item">
+        第三页
+      </div>
+      <div class="full-page-item">
+        4
+      </div>
+      <div class="full-page-item">
+        5
+      </div>
+    </div>
+    <nav class="slider-tab" id="nav">
+      <ul>
+        <li class="samll-tab active">
+          <a href="javascript:void(0);">
+            <span class="navMenutitle">首页</span>
+          </a>
+        </li>
+        <li class="samll-tab">
+          <a href="javascript:void(0);">
+            <span class="navMenutitle">历程</span>
+          </a>
+        </li>
+        <li class="samll-tab">
+          <a href="javascript:void(0);">
+            <span class="navMenutitle">成员</span>
+          </a>
+        </li>
+        <li class="samll-tab">
+          <a href="javascript:void(0);">
+            <span class="navMenutitle">设定</span>
+          </a>
+        </li>
+        <li class="samll-tab">
+          <a href="javascript:void(0);">
+            <span class="navMenutitle">档案</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <script src="js/util/three.js"></script>
+  <script src="js/util/fullpage.js"></script>
+  <script src="js/shlr.js"></script>
+  <script>
+    icon1.onmousedown = function(event){
+
+      let shiftX = event.clientX - icon1.getBoundingClientRect().left;
+      let shiftY = event.clientY - icon1.getBoundingClientRect().top;
+
+      moveAt( event.pageX, event.pageY)
+
+      function moveAt(pageX,pageY){
+        icon1.style.left = pageX-shiftX+`px`
+        icon1.style.top = pageY-shiftY+`px`
+      }
+
+      function onMouseMove(event){
+        moveAt( event.pageX, event.pageY)
+      }
+
+      document.addEventListener('mousemove',onMouseMove)
+
+      icon1.onmouseup = function(event){
+        document.removeEventListener('mousemove',onMouseMove)
+        icon1.onmouseup = null
+      }
+    }
+
+    icon1.ondragstart = function(){
+      return false
+    }
+
+    fullpage()
+  </script>
+</body>
+</html>
