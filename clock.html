@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>滴滴答答</title>
+  <script src="js/util/time/tiem-formatted.js"></script>
+  <script src="js/util/time/live-timer.js"></script>
 </head>
 <body>
   <div class="block">
@@ -13,6 +15,11 @@
     <span>SS</span>
   </div>
 
+  <live-timer id="elem"></live-timer>
+
   <script src="js/clock.js"></script>
+  <script>
+    elem.addEventListener('tick', event => console.log(event.detail));
+  </script>
 </body>
 </html>

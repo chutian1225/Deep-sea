@@ -175,3 +175,33 @@ left.addEventListener('click',() => {
 })
 
 
+// 逆转弹跳 
+
+function makeEaseOut(timing){
+  return function(timeFraction){
+    return 1 - timing(1-timeFraction)
+  }
+} 
+
+// 反弹函数
+function bounce(timeFraction){
+  for( a=1, b=1, result; 1 ; a += b , b /= 2){
+    if(timeFraction >= (7 - 4 * a) / 11){
+      return Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow( b,2)
+    }
+  }
+}
+
+
+let to = div.clientHeight - ball.clientHeight
+
+animate( {
+  duration: 2000,
+  timing: makeEaseOut(bounce),
+  draw(progress){
+    ball.style.top = `${to *  progress}px`
+  }
+})
+
+
+
